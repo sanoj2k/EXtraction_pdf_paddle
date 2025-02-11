@@ -12,7 +12,7 @@ from django.core.files.base import ContentFile
 from pdf2image import convert_from_path
 from paddleocr import PaddleOCR
 from mistralai import Mistral
-from .models import UploadedFile  
+# from .models import UploadedFile  
 
 
 # Initialize PaddleOCR with German language
@@ -109,10 +109,10 @@ def upload_and_classify_pdf(request):
         extracted_category = classify_text_with_mistral(extracted_text)
 
         # Store the file info in the PostgreSQL database
-        UploadedFile.objects.create(
-            file_name=uploaded_file.name,
-            category=extracted_category
-        )
+        # UploadedFile.objects.create(
+        #     file_name=uploaded_file.name,
+        #     category=extracted_category
+        # )
 
         # Compare extracted category with user-selected category
         category_match = extracted_category == selected_category

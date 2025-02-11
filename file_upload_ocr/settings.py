@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-etchd7klaj!mot9&-$_3d=pe40#@^4_x-+k$zrh(5i%-^ah26^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['13.127.82.9', '127.0.0.1']
 
 
 # Application definition
@@ -75,23 +75,23 @@ WSGI_APPLICATION = 'file_upload_ocr.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'pdf_extraction_paddleocr',  # Your PostgreSQL database name
-        'USER': 'postgres',  # Your PostgreSQL username
-        'PASSWORD': 'hp@123',  # Your PostgreSQL password
-        'HOST': 'localhost',  # Database host (can be an IP address if not local)
-        'PORT': '5432',  # PostgreSQL port
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'pdf_extraction_paddleocr',  # Your PostgreSQL database name
+#         'USER': 'postgres',  # Your PostgreSQL username
+#         'PASSWORD': 'hp@123',  # Your PostgreSQL password
+#         'HOST': 'localhost',  # Database host (can be an IP address if not local)
+#         'PORT': '5432',  # PostgreSQL port
+#     }
+# }
 
 
 
